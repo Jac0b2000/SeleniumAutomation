@@ -10,6 +10,8 @@ public class Commands extends Xpath {
 		WebElement singleInputTextField = driver.findElement(By.xpath("//input[@id='single-input-field']"));
 		singleInputTextField.sendKeys(input);
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
+		String classValueOfShowMessageButton =  showMessageButton.getAttribute("class");
+		boolean isShowMessageButtonDisplayed = showMessageButton.isDisplayed();
 		WebElement yourMessageText = driver.findElement(By.xpath("//div[@id='message-one']"));
 		showMessageButton .click();
 	    String textInYourMessageText = yourMessageText.getText();
@@ -23,6 +25,8 @@ public class Commands extends Xpath {
 	    	String result = "Test Fail";
 	    	return result;
 	    }
+	    
+	   
 	    		    
 	}
 	
