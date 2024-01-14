@@ -30,6 +30,7 @@ public class LanguageDropdown {
 			String menuText = menuItem.getText();
 			if(languageMenu.equals(menuText)) {
 				menuItem.click();
+				break;
 			}
 		}
 	}
