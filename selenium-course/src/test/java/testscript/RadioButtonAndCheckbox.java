@@ -15,6 +15,23 @@ public class RadioButtonAndCheckbox extends Base {
 		boolean isMaleButtonIsSelected = maleButton.isSelected();
 	}
 	
+	public void radioButtonGroup() {
+		driver.navigate().to("https://selenium.obsqurazone.com/radio-button-demo.php");
+		WebElement femaleButton = driver.findElement(By.xpath("//input[@name='student-gender' and @value='Female']"));
+		femaleButton.click();
+		boolean isFemaleButtonIsSelected = femaleButton.isSelected();
+		
+		WebElement nineteenToFortyFourButton = driver.findElement(By.xpath("//input[@name='student-age' and @value='19 to 44']"));
+		nineteenToFortyFourButton.click();
+		boolean isnineteenToFortyFourButtonIsSelected = nineteenToFortyFourButton.isSelected();
+		
+		WebElement getResultsButton = driver.findElement(By.xpath("//button[@id='button-two']"));
+		getResultsButton.click();
+		
+		WebElement showResultText = driver.findElement(By.xpath("//div[@id='message-two']"));
+		String textOfshowResultText = showResultText.getText();
+	}
+	
 	public void findElementsSample() {
 		String inputMenu = "Checkbox Demo";
 		List<WebElement> menu = driver.findElements(By.xpath("//ul[@class='list-group list-group-flush']//li"));
@@ -41,7 +58,8 @@ public class RadioButtonAndCheckbox extends Base {
 		RadioButtonAndCheckbox radioButtonAndCheckbox = new RadioButtonAndCheckbox();
 		radioButtonAndCheckbox.initializeBrowser();
 		//radioButtonAndCheckbox.radioButton();
-		radioButtonAndCheckbox.checkbox();
+		//radioButtonAndCheckbox.checkbox();
+		radioButtonAndCheckbox.radioButtonGroup();
 		//radioButtonAndCheckbox.findElementsSample();
 		radioButtonAndCheckbox.driverQuit();
 		
