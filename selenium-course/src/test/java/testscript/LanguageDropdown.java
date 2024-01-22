@@ -22,9 +22,9 @@ public class LanguageDropdown {
 	}
 	
 	public void languageToPortugese() {
+		String languageMenu = "Português (Brasileiro)";
 		WebElement languageButton = driver.findElement(By.xpath("//a[@class='nav-link dropdown-toggle' and text()='English']"));
 		languageButton.click();
-		String languageMenu = "Português (Brasileiro)";
 		List<WebElement> languages = driver.findElements(By.xpath("//ul[@class='dropdown-menu show']//li"));
 		for(WebElement menuItem : languages) {
 			String menuText = menuItem.getText();

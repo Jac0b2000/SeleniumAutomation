@@ -30,6 +30,13 @@ public class RadioButtonAndCheckbox extends Base {
 		
 		WebElement showResultText = driver.findElement(By.xpath("//div[@id='message-two']"));
 		String textOfshowResultText = showResultText.getText();
+		String actualTextofShowResult ="Gender : Female\nAge group: 19 to 44";
+		if(textOfshowResultText.equals(actualTextofShowResult)) {
+			String result = "Test Pass";
+		}
+		else {
+			String result = "Test Fail";
+		}
 	}
 	
 	public void findElementsSample() {

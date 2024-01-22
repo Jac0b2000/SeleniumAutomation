@@ -1,5 +1,7 @@
 package testscript;
 
+import static org.testng.Assert.assertEquals;
+
 import java.sql.Driver;
 
 import javax.naming.directory.DirContext;
@@ -36,6 +38,7 @@ public class ElementCommands extends Xpath{
 		String result = "Test Fail";
 		return result;
 		}
+
 	}
 	
 	public String borderRadius() {

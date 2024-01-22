@@ -1,7 +1,14 @@
 package testscript;
 
+import java.util.NoSuchElementException;
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 public class GetTotal extends Base {
 	public void twoInputFields() {
@@ -14,7 +21,14 @@ public class GetTotal extends Base {
 		enterValueB.sendKeys(valueB);
 		
 		WebElement getTotalButton = driver.findElement(By.xpath("//button[@id='button-two']"));
+		
+		Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
+				  .withTimeout(Duration.ofSeconds(30))
+				  .pollingEvery(Duration.ofSeconds(5))
+				  .ignoring(NoSuchElementException.class);
+		fluentWait.until(ExpectedConditions.elementToBeClickable(getTotalButton));
 		getTotalButton.click();
+		
 		 
 		int actualTotal = Integer.parseInt(valueA)+Integer.parseInt(valueB);
 		
